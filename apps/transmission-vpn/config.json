@@ -5,7 +5,7 @@
   "exposable": true,
   "port": 9091,
   "id": "transmission-vpn",
-  "tipi_version": 10,
+  "tipi_version": 11,
   "version": "5.3.1",
   "categories": ["utilities", "security"],
   "description": "Transmission is running only when OpenVPN has an active tunnel. It has built-in support for many popular VPN providers to make the setup easier.",
@@ -334,18 +334,338 @@
       "placeholder": "http://list.iblocklist.com/?list=bt_level1&fileformat=p2p&archiveformat=gz",
       "env_variable": "TRANSMISSION_BLOCKLIST_URL"
     },
-{
-"type" : "text",
-"label": "Transmission > Username",
-"env_variable":"TRANSMISSION_RPC_USERNAME"
-},
-{
-"type" : "text",
-"label": "Transmission > Password",
-"env_variable":"TRANSMISSION_RPC_PASSWORD"
-}
+    {
+      "type": "text",
+      "label": "Transmission > Username",
+      "env_variable": "TRANSMISSION_RPC_USERNAME"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Password",
+      "env_variable": "TRANSMISSION_RPC_PASSWORD"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Alt Speed Enabled",
+      "env_variable": "TRANSMISSION_ALT_SPEED_ENABLED"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Alt Speed Up",
+      "env_variable": "TRANSMISSION_ALT_SPEED_UP"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Alt Speed Down",
+      "env_variable": "TRANSMISSION_ALT_SPEED_DOWN"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Speed Limit Down",
+      "env_variable": "TRANSMISSION_SPEED_LIMIT_DOWN"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Speed Limit Down Enabled",
+      "env_variable": "TRANSMISSION_SPEED_LIMIT_DOWN_ENABLED"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Speed Limit Up",
+      "env_variable": "TRANSMISSION_SPEED_LIMIT_UP"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Speed Limit Up Enabled",
+      "env_variable": "TRANSMISSION_SPEED_LIMIT_UP_ENABLED"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Upload Slots Per Torrent",
+      "env_variable": "TRANSMISSION_UPLOAD_SLOTS_PER_TORRENT"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Download Directory",
+      "env_variable": "TRANSMISSION_DOWNLOAD_DIR"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Incomplete Directory",
+      "env_variable": "TRANSMISSION_INCOMPLETE_DIR"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Incomplete Directory Enabled",
+      "env_variable": "TRANSMISSION_INCOMPLETE_DIR_ENABLED"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Preallocation",
+      "env_variable": "TRANSMISSION_PREALLOCATION"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Rename Partial Files",
+      "env_variable": "TRANSMISSION_RENAME_PARTIAL_FILES"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Start Added Torrents",
+      "env_variable": "TRANSMISSION_START_ADDED_TORRENTS"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Umask",
+      "env_variable": "TRANSMISSION_UMASK"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Watch Directory",
+      "env_variable": "TRANSMISSION_WATCH_DIR"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Watch Directory Enabled",
+      "env_variable": "TRANSMISSION_WATCH_DIR_ENABLED"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Cache Size (MB)",
+      "env_variable": "TRANSMISSION_CACHE_SIZE_MB"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Default Trackers",
+      "env_variable": "TRANSMISSION_DEFAULT_TRACKERS"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Encryption",
+      "env_variable": "TRANSMISSION_ENCRYPTION"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Message Level",
+      "env_variable": "TRANSMISSION_MESSAGE_LEVEL"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Scrape Paused Torrents Enabled",
+      "env_variable": "TRANSMISSION_SCRAPE_PAUSED_TORRENTS_ENABLED"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Script Torrent Added Enabled",
+      "env_variable": "TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Script Torrent Added Filename",
+      "env_variable": "TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Script Torrent Done Enabled",
+      "env_variable": "TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Script Torrent Done Filename",
+      "env_variable": "TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Script Torrent Done Seeding Enabled",
+      "env_variable": "TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Script Torrent Done Seeding Filename",
+      "env_variable": "TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Start Paused",
+      "env_variable": "TRANSMISSION_START_PAUSED"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > TCP Enabled",
+      "env_variable": "TRANSMISSION_TCP_ENABLED"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > UTP Enabled",
+      "env_variable": "TRANSMISSION_UTP_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Preferred Transport",
+      "env_variable": "TRANSMISSION_PREFERRED_TRANSPORT"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Peer Limit Global",
+      "env_variable": "TRANSMISSION_PEER_LIMIT_GLOBAL"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Peer Limit Per Torrent",
+      "env_variable": "TRANSMISSION_PEER_LIMIT_PER_TORRENT"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Peer Port",
+      "env_variable": "TRANSMISSION_PEER_PORT"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Peer Port Random High",
+      "env_variable": "TRANSMISSION_PEER_PORT_RANDOM_HIGH"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Peer Port Random Low",
+      "env_variable": "TRANSMISSION_PEER_PORT_RANDOM_LOW"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Peer Port Random On Start",
+      "env_variable": "TRANSMISSION_PEER_PORT_RANDOM_ON_START"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Port Forwarding Enabled",
+      "env_variable": "TRANSMISSION_PORT_FORWARDING_ENABLED"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Download Queue Enabled",
+      "env_variable": "TRANSMISSION_DOWNLOAD_QUEUE_ENABLED"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Download Queue Size",
+      "env_variable": "TRANSMISSION_DOWNLOAD_QUEUE_SIZE"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Queue Stalled Enabled",
+      "env_variable": "TRANSMISSION_QUEUE_STALLED_ENABLED"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Queue Stalled Minutes",
+      "env_variable": "TRANSMISSION_QUEUE_STALLED_MINUTES"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Seed Queue Enabled",
+      "env_variable": "TRANSMISSION_SEED_QUEUE_ENABLED"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Seed Queue Size",
+      "env_variable": "TRANSMISSION_SEED_QUEUE_SIZE"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Ratio Limit",
+      "env_variable": "TRANSMISSION_RATIO_LIMIT"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Ratio Limit Enabled",
+      "env_variable": "TRANSMISSION_RATIO_LIMIT_ENABLED"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > RPC Authentication Required",
+      "env_variable": "TRANSMISSION_RPC_AUTHENTICATION_REQUIRED"
+    },
+    {
+      "type": "ip",
+      "label": "Transmission > RPC Bind Address",
+      "env_variable": "TRANSMISSION_RPC_BIND_ADDRESS"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > RPC Enabled",
+      "env_variable": "TRANSMISSION_RPC_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > RPC Host Whitelist",
+      "env_variable": "TRANSMISSION_RPC_HOST_WHITELIST"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > RPC Host Whitelist Enabled",
+      "env_variable": "TRANSMISSION_RPC_HOST_WHITELIST_ENABLED"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > RPC Port",
+      "env_variable": "TRANSMISSION_RPC_PORT"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > RPC URL",
+      "env_variable": "TRANSMISSION_RPC_URL"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > RPC Whitelist",
+      "env_variable": "TRANSMISSION_RPC_WHITELIST"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > RPC Whitelist Enabled",
+      "env_variable": "TRANSMISSION_RPC_WHITELIST_ENABLED"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Alt Speed Time Enabled",
+      "env_variable": "TRANSMISSION_ALT_SPEED_TIME_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Alt Speed Time Begin",
+      "env_variable": "TRANSMISSION_ALT_SPEED_TIME_BEGIN"
+    },
+    {
+      "type": "text",
+      "label": "Transmission > Alt Speed Time End",
+      "env_variable": "TRANSMISSION_ALT_SPEED_TIME_END"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Alt Speed Time Day",
+      "env_variable": "TRANSMISSION_ALT_SPEED_TIME_DAY"
+    },
+    {
+      "type": "number",
+      "label": "Transmission > Idle Seeding Limit",
+      "env_variable": "TRANSMISSION_IDLE_SEEDING_LIMIT"
+    },
+    {
+      "type": "boolean",
+      "label": "Transmission > Idle Seeding Limit Enabled",
+      "env_variable": "TRANSMISSION_IDLE_SEEDING_LIMIT_ENABLED"
+    },
+    {
+      "type": "ip",
+      "label": "Transmission > Bind Address IPv4",
+      "env_variable": "TRANSMISSION_BIND_ADDRESS_IPV4"
+    },
+    {
+      "type": "ip",
+      "label": "Transmission > Bind Address IPv6",
+      "env_variable": "TRANSMISSION_BIND_ADDRESS_IPV6"
+    }
   ],
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1691943801422,
-  "updated_at": 1739687048
+  "updated_at": 1739695142000
 }
