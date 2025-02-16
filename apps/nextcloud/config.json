@@ -28,6 +28,44 @@
       "min": 10,
       "required": true,
       "env_variable": "NEXTCLOUD_ADMIN_PASSWORD"
+    },
+    {
+      "type": "text",
+      "label": "Database Host",
+      "max": 50,
+      "min": 3,
+      "required": true,
+      "env_variable": "NEXTCLOUD_DB_HOST"
+    },
+    {
+      "type": "text",
+      "label": "Database User",
+      "max": 50,
+      "min": 3,
+      "required": true,
+      "env_variable": "NEXTCLOUD_DB_USER"
+    },
+    {
+      "type": "password",
+      "label": "Database Password",
+      "max": 50,
+      "min": 10,
+      "required": true,
+      "env_variable": "NEXTCLOUD_DB_PASSWORD"
+    },
+    {
+      "type": "email",
+      "label": "Admin Email",
+      "max": 100,
+      "min": 5,
+      "required": true,
+      "env_variable": "NEXTCLOUD_ADMIN_EMAIL"
+    },
+    {
+      "type": "boolean",
+      "label": "Enable HTTPS",
+      "required": false,
+      "env_variable": "NEXTCLOUD_ENABLE_HTTPS"
     }
   ],
   "supported_architectures": ["arm64", "amd64"],
