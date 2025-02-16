@@ -1,5 +1,9 @@
 version: "3.7"
 
+volumes:
+  nextcloud_aio_mastercontainer:
+    name: nextcloud_aio_mastercontainer
+
 services:
   nextcloud-aio-mastercontainer:
     image: nextcloud/all-in-one:latest
