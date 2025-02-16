@@ -3,7 +3,6 @@ services:
     image: qdrant/qdrant
     hostname: qdrant
     container_name: qdrant
-    restart: unless-stopped
     ports:
       - ${APP_PORT}:6333
       - 6334:6334
