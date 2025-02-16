@@ -12,6 +12,8 @@ services:
       - TZ=${TZ}
       - JELLYFIN_PublishedServerUrl=${APP_PROTOCOL:-http}://${APP_DOMAIN}/
     restart: "unless-stopped"
+    devices:
+      - /dev/dri:/dev/dri
     ports:
       - ${APP_PORT}:8096
     networks:
