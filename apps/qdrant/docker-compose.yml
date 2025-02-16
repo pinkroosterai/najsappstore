@@ -1,0 +1,16 @@
+services:
+  qdrant:
+    image: qdrant/qdrant
+    hostname: qdrant
+    container_name: qdrant
+    restart: unless-stopped
+    ports:
+      - ${APP_PORT}:6333
+    volumes:
+      - ${APP_DATA_DIR}/data:/qdrant/storage
+    networks:
+      - tipi_main_network
+    labels:
+      # Main
+      traefik.enable: false
+      runtipi.managed: true
