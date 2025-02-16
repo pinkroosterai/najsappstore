@@ -26,10 +26,14 @@ services:
       - CREATE_TUN_DEVICE=${TRANSMISSION_CREATE_TUN_DEVICE-false}
       - PEER_DNS=${TRANSMISSION_PEER_DNS-false}
       - TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=${TRANSMISSION_RPC_AUTHENTICATION_REQUIRED-false}
+      - TRANSMISSION_DOWNLOAD_DIR=/media/torrents/complete
+      - TRANSMISSION_INCOMPLETE_DIR_ENABLED=true
+      - TRANSMISSION_INCOMPLETE_DIR=/media/torrents/incomplete
+      - TRANSMISSION_PREALLOCATION=1
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
       - ${APP_DATA_DIR}/data/custom:/etc/openvpn/custom
-      - ${ROOT_FOLDER_HOST}/media/torrents:/media/torrents
+      - ${ROOT_FOLDER_HOST}/media:/media
     ports:
       - ${APP_PORT}:9091
     restart: unless-stopped
