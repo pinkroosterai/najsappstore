@@ -5,7 +5,7 @@
   "exposable": true,
   "port": 9091,
   "id": "transmission-vpn",
-  "tipi_version": 8,
+  "tipi_version": 9,
   "version": "5.3.1",
   "categories": ["utilities", "security"],
   "description": "Transmission is running only when OpenVPN has an active tunnel. It has built-in support for many popular VPN providers to make the setup easier.",
@@ -333,9 +333,19 @@
       "label": "Transmission > Blocklist URL",
       "placeholder": "http://list.iblocklist.com/?list=bt_level1&fileformat=p2p&archiveformat=gz",
       "env_variable": "TRANSMISSION_BLOCKLIST_URL"
-    }
+    },
+{
+"type" : "text",
+"label": "Transmission > Username",
+"env_variable":"TRANSMISSION_USERNAME"
+},
+{
+"type" : "text",
+"label": "Transmission > Password",
+"env_variable":"TRANSMISSION_PASSWORD"
+}
   ],
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1691943801422,
-  "updated_at": 1723566285000
+  "updated_at": 1739687047
 }
