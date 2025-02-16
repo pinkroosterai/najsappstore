@@ -333,6 +333,7 @@
       "label": "Transmission > Password",
       "env_variable": "TRANSMISSION_RPC_PASSWORD"
     },
+    {
       "type": "boolean",
       "label": "Transmission > RPC Authentication Required",
       "env_variable": "TRANSMISSION_RPC_AUTHENTICATION_REQUIRED"
