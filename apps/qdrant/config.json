@@ -1,0 +1,18 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Qdrant",
+  "id": "qdrant",
+  "available": true,
+  "short_desc": "High-performance vector search engine for managing large-scale vector datasets.",
+  "author": "Qdrant Team",
+  "port": 6333,
+  "categories": ["database", "search", "ai", "ml"],
+  "description": "Qdrant is a high-performance vector search engine and database designed for managing and searching through large-scale vector datasets. It provides both HTTP and gRPC APIs, supports persistent storage, and is optimized for scalable, distributed deployments. Ideal for both development and production environments.",
+  "tipi_version": 1,
+  "version": "v1.13.3",
+  "source": "https://github.com/qdrant/qdrant",
+  "exposable": true,
+  "supported_architectures": ["amd64", "arm64"],
+  "created_at": 1739707394000,
+  "updated_at": 1739707394000
+}
