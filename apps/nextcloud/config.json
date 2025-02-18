@@ -84,6 +84,14 @@
       "label": "Additional APKs",
       "required": false,
       "env_variable": "NEXTCLOUD_ADDITIONAL_APKS"
+    },
+    {
+      "type": "text",
+      "label": "Additional Community Containers",
+      "required": false,
+      "env_variable": "AIO_COMMUNITY_CONTAINERS",
+      "placeholder": "e.g., fail2ban pi-hole plex",
+      "hint": "Specify space-separated community container names to include. Refer to the community-containers directory for available options."
     }
   ],
   "supported_architectures": ["arm64", "amd64"],
