@@ -66,6 +66,24 @@
       "label": "Enable HTTPS",
       "required": false,
       "env_variable": "NEXTCLOUD_ENABLE_HTTPS"
+    },
+    {
+      "type": "boolean",
+      "label": "Enable NVIDIA GPU",
+      "required": false,
+      "env_variable": "NEXTCLOUD_ENABLE_NVIDIA_GPU"
+    },
+    {
+      "type": "text",
+      "label": "Additional PHP Extensions",
+      "required": false,
+      "env_variable": "NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS"
+    },
+    {
+      "type": "text",
+      "label": "Additional APKs",
+      "required": false,
+      "env_variable": "NEXTCLOUD_ADDITIONAL_APKS"
     }
   ],
   "supported_architectures": ["arm64", "amd64"],
