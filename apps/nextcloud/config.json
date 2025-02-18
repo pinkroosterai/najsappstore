@@ -92,6 +92,51 @@
       "env_variable": "AIO_COMMUNITY_CONTAINERS",
       "placeholder": "e.g., fail2ban pi-hole plex",
       "hint": "Specify space-separated community container names to include. Refer to the community-containers directory for available options."
+    },
+    {
+      "type": "text",
+      "label": "Upload Limit",
+      "max": 10,
+      "min": 1,
+      "required": false,
+      "env_variable": "NEXTCLOUD_UPLOAD_LIMIT",
+      "hint": "Can be adjusted if you need more. See https://github.com/nextcloud/all-in-one#how-to-adjust-the-upload-limit-for-nextcloud",
+      "placeholder": "16G"
+    },
+    {
+      "type": "number",
+      "label": "Max Execution Time",
+      "max": 86400,
+      "min": 10,
+      "required": false,
+      "env_variable": "NEXTCLOUD_MAX_TIME",
+      "hint": "Can be adjusted if you need more. See https://github.com/nextcloud/all-in-one#how-to-adjust-the-max-execution-time-for-nextcloud",
+      "placeholder": "3600"
+    },
+    {
+      "type": "text",
+      "label": "PHP Memory Limit",
+      "max": 10,
+      "min": 1,
+      "required": false,
+      "env_variable": "NEXTCLOUD_MEMORY_LIMIT",
+      "hint": "Can be adjusted if you need more. See https://github.com/nextcloud/all-in-one#how-to-adjust-the-php-memory-limit-for-nextcloud",
+      "placeholder": "512M"
+    },
+    {
+      "type": "text",
+      "label": "Startup Apps",
+      "required": false,
+      "env_variable": "NEXTCLOUD_STARTUP_APPS",
+      "hint": "Allows you to modify the Nextcloud apps that are installed on starting AIO the first time. Separate app names with spaces.",
+      "placeholder": "deck twofactor_totp tasks calendar contacts notes"
+    },
+    {
+      "type": "boolean",
+      "label": "Keep Disabled Apps",
+      "required": false,
+      "env_variable": "NEXTCLOUD_KEEP_DISABLED_APPS",
+      "hint": "Setting this to true will keep Nextcloud apps that are disabled in the AIO interface and not uninstall them if they should be installed."
     }
   ],
   "supported_architectures": ["arm64", "amd64"],
