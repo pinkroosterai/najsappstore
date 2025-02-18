@@ -10,31 +10,25 @@ services:
     init: true
     restart: always
     container_name: nextcloud-aio-mastercontainer
+    devices:
+      - /dev/dri:/dev/dri
     volumes:
       - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
       - /var/run/docker.sock:/var/run/docker.sock:ro
     network_mode: bridge
     ports:
-      - 8080:8080
+      - ${APP_PORT}:8080
       - 8443:8443
     environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
       - APACHE_PORT=11000
       - APACHE_IP_BINDING=0.0.0.0
       - SKIP_DOMAIN_VALIDATION=false
+      - NEXTCLOUD_ADDITIONAL_APKS=imagemagick
+      - NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS=imagick
       - NEXTCLOUD_ENABLE_DRI_DEVICE=true
-      - NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS="imagick"
-      - NEXTCLOUD_ADDITIONAL_APKS="imagemagick"
-      - NEXTCLOUD_DATADIR="$APP_DATA_DIR"
-      - NEXTCLOUD_MEMORY_LIMIT="1024M"
-      - NEXTCLOUD_MOUNT="$RUNTIPI_MEDIA_PATH"
-      - NEXTCLOUD_ENABLE_NVIDIA_GPU=${NEXTCLOUD_ENABLE_NVIDIA_GPU}
-      - NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS=${NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS}
-      - NEXTCLOUD_ADDITIONAL_APKS=${NEXTCLOUD_ADDITIONAL_APKS}
-      - AIO_COMMUNITY_CONTAINERS=${AIO_COMMUNITY_CONTAINERS}
-      - NEXTCLOUD_UPLOAD_LIMIT=${NEXTCLOUD_UPLOAD_LIMIT}
-      - NEXTCLOUD_MAX_TIME=${NEXTCLOUD_MAX_TIME}
-      - NEXTCLOUD_MEMORY_LIMIT=${NEXTCLOUD_MEMORY_LIMIT}
-      - NEXTCLOUD_STARTUP_APPS=${NEXTCLOUD_STARTUP_APPS}
-      - NEXTCLOUD_KEEP_DISABLED_APPS=${NEXTCLOUD_KEEP_DISABLED_APPS}
+      - NEXTCLOUD_ENABLE_NVIDIA_GPU=true
     labels:
       runtipi.managed: true

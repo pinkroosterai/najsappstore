@@ -5,7 +5,7 @@
   "exposable": true,
   "port": 8083,
   "id": "nextcloud",
-  "tipi_version": 25,
+  "tipi_version": 26,
   "version": "26.0.13-apache",
   "categories": ["data"],
   "description": "Nextcloud is a self-hosted, open source, and fully-featured cloud storage solution for your personal files, office documents, and photos.",
@@ -13,66 +13,6 @@
   "author": "Nextcloud GmbH",
   "source": "https://github.com/nextcloud/server",
   "form_fields": [
-    {
-      "type": "text",
-      "label": "Username",
-      "max": 50,
-      "min": 3,
-      "required": true,
-      "env_variable": "NEXTCLOUD_ADMIN_USER"
-    },
-    {
-      "type": "password",
-      "label": "Password",
-      "max": 50,
-      "min": 10,
-      "required": true,
-      "env_variable": "NEXTCLOUD_ADMIN_PASSWORD"
-    },
-    {
-      "type": "text",
-      "label": "Database Host",
-      "max": 50,
-      "min": 3,
-      "required": true,
-      "env_variable": "NEXTCLOUD_DB_HOST"
-    },
-    {
-      "type": "text",
-      "label": "Database User",
-      "max": 50,
-      "min": 3,
-      "required": true,
-      "env_variable": "NEXTCLOUD_DB_USER"
-    },
-    {
-      "type": "password",
-      "label": "Database Password",
-      "max": 50,
-      "min": 10,
-      "required": true,
-      "env_variable": "NEXTCLOUD_DB_PASSWORD"
-    },
-    {
-      "type": "email",
-      "label": "Admin Email",
-      "max": 100,
-      "min": 5,
-      "required": true,
-      "env_variable": "NEXTCLOUD_ADMIN_EMAIL"
-    },
-    {
-      "type": "boolean",
-      "label": "Enable HTTPS",
-      "required": false,
-      "env_variable": "NEXTCLOUD_ENABLE_HTTPS"
-    },
-    {
-      "type": "boolean",
-      "label": "Enable NVIDIA GPU",
-      "required": false,
-      "env_variable": "NEXTCLOUD_ENABLE_NVIDIA_GPU"
-    },
     {
       "type": "text",
       "label": "Additional PHP Extensions",
@@ -92,54 +32,9 @@
       "env_variable": "AIO_COMMUNITY_CONTAINERS",
       "placeholder": "e.g., fail2ban pi-hole plex",
       "hint": "Specify space-separated community container names to include. Refer to the community-containers directory for available options."
-    },
-    {
-      "type": "text",
-      "label": "Upload Limit",
-      "max": 10,
-      "min": 1,
-      "required": false,
-      "env_variable": "NEXTCLOUD_UPLOAD_LIMIT",
-      "hint": "Adjust the upload limit as needed. Refer to the Nextcloud documentation: https://github.com/nextcloud/all-in-one#how-to-adjust-the-upload-limit-for-nextcloud",
-      "placeholder": "16G"
-    },
-    {
-      "type": "number",
-      "label": "Max Execution Time",
-      "max": 86400,
-      "min": 10,
-      "required": false,
-      "env_variable": "NEXTCLOUD_MAX_TIME",
-      "hint": "Set the maximum execution time in seconds. Refer to Nextcloud documentation: https://github.com/nextcloud/all-in-one#how-to-adjust-the-max-execution-time-for-nextcloud",
-      "placeholder": "3600"
-    },
-    {
-      "type": "text",
-      "label": "PHP Memory Limit",
-      "max": 10,
-      "min": 1,
-      "required": false,
-      "env_variable": "NEXTCLOUD_MEMORY_LIMIT",
-      "hint": "Modify the PHP memory limit as required. See Nextcloud documentation: https://github.com/nextcloud/all-in-one#how-to-adjust-the-php-memory-limit-for-nextcloud",
-      "placeholder": "512M"
-    },
-    {
-      "type": "text",
-      "label": "Startup Apps",
-      "required": false,
-      "env_variable": "NEXTCLOUD_STARTUP_APPS",
-      "hint": "Specify the Nextcloud apps to install on first startup. Separate app names with spaces. Refer to documentation: https://github.com/nextcloud/all-in-one#how-to-change-the-nextcloud-apps-that-are-installed-on-the-first-startup",
-      "placeholder": "deck twofactor_totp tasks calendar contacts notes"
-    },
-    {
-      "type": "boolean",
-      "label": "Keep Disabled Apps",
-      "required": false,
-      "env_variable": "NEXTCLOUD_KEEP_DISABLED_APPS",
-      "hint": "When set to true, disabled Nextcloud apps will not be uninstalled even if they should be installed. See https://github.com/nextcloud/all-in-one#how-to-keep-disabled-apps."
     }
   ],
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1691943801422,
-  "updated_at": 1739867851000
+  "updated_at": 1739867852000
 }
