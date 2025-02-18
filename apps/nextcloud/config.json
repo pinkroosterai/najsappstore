@@ -100,7 +100,7 @@
       "min": 1,
       "required": false,
       "env_variable": "NEXTCLOUD_UPLOAD_LIMIT",
-      "hint": "Can be adjusted if you need more. See https://github.com/nextcloud/all-in-one#how-to-adjust-the-upload-limit-for-nextcloud",
+      "hint": "Adjust the upload limit as needed. Refer to the Nextcloud documentation: https://github.com/nextcloud/all-in-one#how-to-adjust-the-upload-limit-for-nextcloud",
       "placeholder": "16G"
     },
     {
@@ -110,7 +110,7 @@
       "min": 10,
       "required": false,
       "env_variable": "NEXTCLOUD_MAX_TIME",
-      "hint": "Can be adjusted if you need more. See https://github.com/nextcloud/all-in-one#how-to-adjust-the-max-execution-time-for-nextcloud",
+      "hint": "Set the maximum execution time in seconds. Refer to Nextcloud documentation: https://github.com/nextcloud/all-in-one#how-to-adjust-the-max-execution-time-for-nextcloud",
       "placeholder": "3600"
     },
     {
@@ -120,7 +120,7 @@
       "min": 1,
       "required": false,
       "env_variable": "NEXTCLOUD_MEMORY_LIMIT",
-      "hint": "Can be adjusted if you need more. See https://github.com/nextcloud/all-in-one#how-to-adjust-the-php-memory-limit-for-nextcloud",
+      "hint": "Modify the PHP memory limit as required. See Nextcloud documentation: https://github.com/nextcloud/all-in-one#how-to-adjust-the-php-memory-limit-for-nextcloud",
       "placeholder": "512M"
     },
     {
@@ -128,7 +128,7 @@
       "label": "Startup Apps",
       "required": false,
       "env_variable": "NEXTCLOUD_STARTUP_APPS",
-      "hint": "Allows you to modify the Nextcloud apps that are installed on starting AIO the first time. Separate app names with spaces.",
+      "hint": "Specify the Nextcloud apps to install on first startup. Separate app names with spaces. Refer to documentation: https://github.com/nextcloud/all-in-one#how-to-change-the-nextcloud-apps-that-are-installed-on-the-first-startup",
       "placeholder": "deck twofactor_totp tasks calendar contacts notes"
     },
     {
@@ -136,7 +136,7 @@
       "label": "Keep Disabled Apps",
       "required": false,
       "env_variable": "NEXTCLOUD_KEEP_DISABLED_APPS",
-      "hint": "Setting this to true will keep Nextcloud apps that are disabled in the AIO interface and not uninstall them if they should be installed."
+      "hint": "When set to true, disabled Nextcloud apps will not be uninstalled even if they should be installed. See https://github.com/nextcloud/all-in-one#how-to-keep-disabled-apps."
     }
   ],
   "supported_architectures": ["arm64", "amd64"],
