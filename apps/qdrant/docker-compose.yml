@@ -3,6 +3,8 @@ services:
     image: qdrant/qdrant
     hostname: qdrant
     container_name: qdrant
+    environment:
+      - TZ=${TZ}
     ports:
       - ${APP_PORT}:6333
       - 6334:6334
