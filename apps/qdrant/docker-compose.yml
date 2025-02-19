@@ -16,7 +16,7 @@ services:
       # Main
       traefik.enable: true
       traefik.http.middlewares.qdrant-web-redirect.redirectscheme.scheme: https
-      traefik.http.services.qdrant.loadbalancer.server.port: 8989
+      traefik.http.services.qdrant.loadbalancer.server.port: 6333
       # Web
       traefik.http.routers.qdrant-insecure.rule: Host(`${APP_DOMAIN}`)
       traefik.http.routers.qdrant-insecure.entrypoints: web

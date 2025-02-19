@@ -12,7 +12,6 @@
   "version": "v1.13.3",
   "source": "https://github.com/qdrant/qdrant",
   "exposable": true,
-  "dynamic": true,
   "supported_architectures": ["amd64", "arm64"],
   "created_at": 1739707394000,
   "updated_at": 1739707889000
