@@ -1,22 +1,7 @@
-version: "3.7"
-
-volumes:
-  nextcloud_aio_mastercontainer:
-    name: nextcloud_aio_mastercontainer
-
 services:
   nextcloud-aio-mastercontainer:
-    image: nextcloud/all-in-one:latest
-    init: true
-    restart: always
     container_name: nextcloud-aio-mastercontainer
-    volumes:
-      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    network_mode: bridge
-    ports:
-      - ${APP_PORT}:8080
-      - 8443:8443
+    image: nextcloud/all-in-one:latest
     environment:
       - PUID=1000
       - PGID=1000
@@ -27,11 +12,19 @@ services:
       - NEXTCLOUD_ADDITIONAL_APKS=imagemagick
       - NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS=imagick
       - NEXTCLOUD_ENABLE_NVIDIA_GPU=true
+    volumes:
+      - ${APP_DATA_DIR}/data/docker-aio-config:/mnt/docker-aio-config
+    ports:
+      - ${APP_PORT}:8080
+      - 8443:8443
+    restart: unless-stopped
+    networks:
+      - tipi_main_network
     labels:
       # Main
       traefik.enable: true
       traefik.http.middlewares.nextcloud-aio-mastercontainer-web-redirect.redirectscheme.scheme: https
-      traefik.http.services.nextcloud-aio-mastercontainer.loadbalancer.server.port: 6333
+      traefik.http.services.nextcloud-aio-mastercontainer.loadbalancer.server.port: 8080
       # Web
       traefik.http.routers.nextcloud-aio-mastercontainer-insecure.rule: Host(`${APP_DOMAIN}`)
       traefik.http.routers.nextcloud-aio-mastercontainer-insecure.entrypoints: web
