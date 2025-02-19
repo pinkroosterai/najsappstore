@@ -5,36 +5,16 @@
   "exposable": true,
   "port": 8083,
   "id": "nextcloud",
-  "tipi_version": 26,
-  "version": "26.0.13-apache",
+  "tipi_version": 27,
+  "version": "26.0.13-aio",
   "categories": ["data"],
   "description": "Nextcloud is a self-hosted, open source, and fully-featured cloud storage solution for your personal files, office documents, and photos.",
   "short_desc": "Productivity platform that keeps you in control",
   "author": "Nextcloud GmbH",
   "source": "https://github.com/nextcloud/server",
-  "form_fields": [
-    {
-      "type": "text",
-      "label": "Additional PHP Extensions",
-      "required": false,
-      "env_variable": "NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS"
-    },
-    {
-      "type": "text",
-      "label": "Additional APKs",
-      "required": false,
-      "env_variable": "NEXTCLOUD_ADDITIONAL_APKS"
-    },
-    {
-      "type": "text",
-      "label": "Additional Community Containers",
-      "required": false,
-      "env_variable": "AIO_COMMUNITY_CONTAINERS",
-      "placeholder": "e.g., fail2ban pi-hole plex",
-      "hint": "Specify space-separated community container names to include. Refer to the community-containers directory for available options."
-    }
-  ],
+
+ "form_fields": [  ],
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1691943801422,
-  "updated_at": 1739867852000
+  "updated_at": 1739964550000
 }

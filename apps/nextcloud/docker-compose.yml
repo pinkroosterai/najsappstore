@@ -10,8 +10,6 @@ services:
     init: true
     restart: always
     container_name: nextcloud-aio-mastercontainer
-    devices:
-      - /dev/dri:/dev/dri
     volumes:
       - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -28,7 +26,30 @@ services:
       - SKIP_DOMAIN_VALIDATION=false
       - NEXTCLOUD_ADDITIONAL_APKS=imagemagick
       - NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS=imagick
-      - NEXTCLOUD_ENABLE_DRI_DEVICE=true
       - NEXTCLOUD_ENABLE_NVIDIA_GPU=true
     labels:
+      # Main
+      traefik.enable: true
+      traefik.http.middlewares.nextcloud-aio-mastercontainer-web-redirect.redirectscheme.scheme: https
+      traefik.http.services.nextcloud-aio-mastercontainer.loadbalancer.server.port: 6333
+      # Web
+      traefik.http.routers.nextcloud-aio-mastercontainer-insecure.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.nextcloud-aio-mastercontainer-insecure.entrypoints: web
+      traefik.http.routers.nextcloud-aio-mastercontainer-insecure.service: nextcloud-aio-mastercontainer
+      traefik.http.routers.nextcloud-aio-mastercontainer-insecure.middlewares: nextcloud-aio-mastercontainer-web-redirect
+      # Websecure
+      traefik.http.routers.nextcloud-aio-mastercontainer.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.nextcloud-aio-mastercontainer.entrypoints: websecure
+      traefik.http.routers.nextcloud-aio-mastercontainer.service: nextcloud-aio-mastercontainer
+      traefik.http.routers.nextcloud-aio-mastercontainer.tls.certresolver: myresolver
+      # Local domain
+      traefik.http.routers.nextcloud-aio-mastercontainer-local-insecure.rule: Host(`nextcloud-aio-mastercontainer.${LOCAL_DOMAIN}`)
+      traefik.http.routers.nextcloud-aio-mastercontainer-local-insecure.entrypoints: web
+      traefik.http.routers.nextcloud-aio-mastercontainer-local-insecure.service: nextcloud-aio-mastercontainer
+      traefik.http.routers.nextcloud-aio-mastercontainer-local-insecure.middlewares: nextcloud-aio-mastercontainer-web-redirect
+      # Local domain secure
+      traefik.http.routers.nextcloud-aio-mastercontainer-local.rule: Host(`nextcloud-aio-mastercontainer.${LOCAL_DOMAIN}`)
+      traefik.http.routers.nextcloud-aio-mastercontainer-local.entrypoints: websecure
+      traefik.http.routers.nextcloud-aio-mastercontainer-local.service: nextcloud-aio-mastercontainer
+      traefik.http.routers.nextcloud-aio-mastercontainer-local.tls: true
       runtipi.managed: true
